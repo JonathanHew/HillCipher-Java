@@ -84,11 +84,12 @@ public class HillCipher {
 
         // creating the answer matrix
         answerArray.clear();
-        answerArray.add((textArray.get(0) * keyArray.get(0)) + (textArray.get(1) * keyArray.get(2)) % 26);
-        answerArray.add((textArray.get(0) * keyArray.get(1)) + (textArray.get(1) * keyArray.get(3)) % 26);
-        answerArray.add((textArray.get(2) * keyArray.get(0)) + (textArray.get(3) * keyArray.get(2)) % 26);
-        answerArray.add((textArray.get(2) * keyArray.get(1)) + (textArray.get(3) * keyArray.get(3)) % 26);
+        answerArray.add(((textArray.get(0) * keyArray.get(0)) + (textArray.get(1) * keyArray.get(2))) % 26);
+        answerArray.add(((textArray.get(0) * keyArray.get(1)) + (textArray.get(1) * keyArray.get(3))) % 26);
+        answerArray.add(((textArray.get(2) * keyArray.get(0)) + (textArray.get(3) * keyArray.get(2))) % 26);
+        answerArray.add(((textArray.get(2) * keyArray.get(1)) + (textArray.get(3) * keyArray.get(3))) % 26);
 
+        answer = "";
         // creating the encrytped string using the answer matrix
         for (int i = 0; i < answerArray.size(); i++) {
             answer = answer + ALPHABET.charAt(answerArray.get(i));
